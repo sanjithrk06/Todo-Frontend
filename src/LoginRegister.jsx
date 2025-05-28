@@ -15,7 +15,7 @@ const LoginRegister = ({ darkMode }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-    
+
     try {
       if (isLogin) {
         await handleEmailLogin(formData);
@@ -168,7 +168,10 @@ const LoginRegister = ({ darkMode }) => {
 
         <div className="mt-6">
           <button
-            onClick={() => window.location.href = "http://localhost:5000/api/auth/google"}
+            onClick={() =>
+              (window.location.href =
+                "https://todo-backend-0zpv.onrender.com/api/auth/google")
+            }
             className={`w-full p-3 rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-3 mb-3 ${
               darkMode
                 ? "border-gray-600 bg-gray-700 text-white hover:bg-gray-600"
@@ -180,7 +183,10 @@ const LoginRegister = ({ darkMode }) => {
           </button>
 
           <button
-            onClick={() => window.location.href = "http://localhost:5000/api/auth/github"}
+            onClick={() =>
+              (window.location.href =
+                "https://todo-backend-0zpv.onrender.com/api/auth/github")
+            }
             className={`w-full p-3 rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-3 ${
               darkMode
                 ? "border-gray-600 bg-gray-700 text-white hover:bg-gray-600"
@@ -193,9 +199,7 @@ const LoginRegister = ({ darkMode }) => {
         </div>
 
         <p className="mt-8 text-center">
-          <span
-            className={darkMode ? "text-gray-400" : "text-gray-500"}
-          >
+          <span className={darkMode ? "text-gray-400" : "text-gray-500"}>
             {isLogin ? "Don't have an account? " : "Already have an account? "}
           </span>
           <button
